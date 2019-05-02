@@ -30,7 +30,6 @@ public class RocketMQSender extends AbstractRocketMQ {
     }
 
     /**
-     * 配置发生变化时加载
      * sender volatile 并不保证线程安全，有丢消息风险。
      * 尽量不要依赖动态变更
      */
@@ -103,6 +102,11 @@ public class RocketMQSender extends AbstractRocketMQ {
         }
     }
 
+    @Override
+    public void shutDown() {
+        shutDownProducer();
+    }
+
     private void shutDownProducer() {
         if (this.sender != null) {
             try {
@@ -113,11 +117,6 @@ public class RocketMQSender extends AbstractRocketMQ {
                         sender.getProducerGroup(), e);
             }
         }
-    }
-
-    @Override
-    public void shutDown() {
-        shutDownProducer();
     }
 
     public Map<String, String> getTopics() {

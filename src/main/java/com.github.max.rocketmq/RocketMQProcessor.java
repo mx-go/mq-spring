@@ -23,6 +23,9 @@ public class RocketMQProcessor extends AbstractRocketMQ {
 
     private volatile DefaultMQPushConsumer consumer;
 
+    /**
+     * 订阅消息接口。需实现MessageListenerConcurrently或MessageListenerOrderly接口
+     */
     private final MessageListener listener;
 
     public RocketMQProcessor(Config config, MessageListener listener) {
@@ -85,8 +88,7 @@ public class RocketMQProcessor extends AbstractRocketMQ {
         } catch (MQClientException e) {
             log.error("StartRocketMQConsumer Error", e);
         }
-        log.info("RocketMQConsumer Started! group={} instance={}", consumer.getConsumerGroup(),
-                consumer.getInstanceName());
+        log.info("RocketMQConsumer Started! group={} instance={}", consumer.getConsumerGroup(), consumer.getInstanceName());
     }
 
     private void setMessageModel(DefaultMQPushConsumer consumer, String messageModel) {
@@ -120,7 +122,7 @@ public class RocketMQProcessor extends AbstractRocketMQ {
                 consumer.subscribe(i.getKey(), i.getValue());
             }
         } catch (MQClientException e) {
-            log.error("SubscribeTopic Error!", e);
+            log.error("SubscribeTopic Error! topics: {}", topics, e);
         }
     }
 

@@ -13,6 +13,9 @@ import org.apache.commons.lang.StringUtils;
 @Slf4j
 public abstract class AbstractRocketMQ {
 
+    /**
+     * 存储配置信息的对象
+     */
     @Getter
     @Setter
     protected volatile Config config = new Config();

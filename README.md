@@ -1,1 +1,1 @@
-rocketmq
+rocketmq自动化配置

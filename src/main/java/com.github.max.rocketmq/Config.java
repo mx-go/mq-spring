@@ -33,6 +33,7 @@ public class Config {
 
     /**
      * 消息模型，支持以下两种1.集群消费2.广播消费
+     * 缺省：MessageModel.CLUSTERING
      *
      * @see org.apache.rocketmq.common.protocol.heartbeat.MessageModel
      */
@@ -50,7 +51,7 @@ public class Config {
      */
     private int consumeThreadMax = 64;
     /**
-     * 批量拉消息，一次最多拉多少条
+     * 批量拉消息，一次最多拉多少条。缺省：32
      */
     private int fetchSize = 10;
     /**
