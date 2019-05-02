@@ -14,7 +14,7 @@ import java.util.Map;
 import java.util.UUID;
 
 /**
- * @description: RocketMQ支持制动化配置的消息处理器
+ * @description: RocketMQ支持自动化配置的消息处理器
  * @author: max
  * @date: 2019-05-02 16:57
  **/
