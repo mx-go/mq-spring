@@ -1,6 +1,4 @@
-RocketMQ自动化配置。
-
-Spring与RocketMQ结合，简单封装，使用起来更加简单。
+RocketMQ自动化配置。Spring与RocketMQ结合，简单封装，使用起来更加简单。
 
 # 使用方法
 
@@ -31,7 +29,7 @@ Spring与RocketMQ结合，简单封装，使用起来更加简单。
 </bean>
 ```
 
-2. 复杂参数可使用`Config`配置对象。更多配置详见`Configuration`对象。
+2. 复杂参数可使用`Configuration`配置对象。更多配置详见`Configuration`对象。
 
 ```xml
 <!--消息消费者-->
@@ -60,7 +58,7 @@ Spring与RocketMQ结合，简单封装，使用起来更加简单。
 </bean>
 ```
 
-2. 复杂参数可使用`Config`配置对象。更多配置详见`Configuration`对象。
+2. 复杂参数可使用`Configuration`配置对象。更多配置详见`Configuration`对象。
 
 ```xml
 <bean id="sender" class="com.github.max.rocketmq.RocketMQSender" init-method="init" destroy-method="shutDown">
