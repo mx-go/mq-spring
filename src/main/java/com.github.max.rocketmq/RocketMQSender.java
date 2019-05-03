@@ -123,6 +123,11 @@ public class RocketMQSender extends AbstractRocketMQ {
         return Collections.unmodifiableMap(config.getTopics());
     }
 
+    /**
+     * consumer只能发送一个topic
+     *
+     * @return topic
+     */
     private String getTopic() {
         if (config.getTopics() != null) {
             return config.getTopics().keySet().iterator().next();

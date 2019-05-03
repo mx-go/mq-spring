@@ -18,7 +18,7 @@ public abstract class AbstractRocketMQ {
      */
     @Getter
     @Setter
-    protected volatile Config config = new Config();
+    protected volatile Configuration config = new Configuration();
 
     public AbstractRocketMQ() {
 

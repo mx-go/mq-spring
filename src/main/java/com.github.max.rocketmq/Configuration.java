@@ -14,7 +14,7 @@ import java.util.stream.Stream;
  * @date: 2019-05-02 16:57
  **/
 @Data
-public class Config {
+public class Configuration {
 
     /**
      * NameServer地址列表，多个nameServer地址用分号隔开。

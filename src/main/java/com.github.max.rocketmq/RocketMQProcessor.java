@@ -28,7 +28,7 @@ public class RocketMQProcessor extends AbstractRocketMQ {
      */
     private final MessageListener listener;
 
-    public RocketMQProcessor(Config config, MessageListener listener) {
+    public RocketMQProcessor(Configuration config, MessageListener listener) {
         this.config = config;
         this.listener = listener;
     }
@@ -39,8 +39,8 @@ public class RocketMQProcessor extends AbstractRocketMQ {
     }
 
 
-    public RocketMQProcessor(String nameServerKey, String groupKey, String topics, int consumeThreadMin, int consumeThreadMax, MessageListener listener) {
-        super(nameServerKey, groupKey, topics, consumeThreadMin, consumeThreadMax);
+    public RocketMQProcessor(String nameServer, String groupName, String topics, int consumeThreadMin, int consumeThreadMax, MessageListener listener) {
+        super(nameServer, groupName, topics, consumeThreadMin, consumeThreadMax);
         this.listener = listener;
     }
 
