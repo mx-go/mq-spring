@@ -8,10 +8,10 @@ Spring与RocketMQ结合，简单封装，使用起来更加简单。
 
 ```xml
 <dependency>
-            <groupId>com.github.max</groupId>
-            <artifactId>mq-spring</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
+   <groupId>com.github.max</groupId>
+   <artifactId>mq-spring</artifactId>
+   <version>1.0.0-SNAPSHOT</version>
+</dependency>
 ```
 
 ## 消息订阅consumer
