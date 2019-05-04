@@ -29,7 +29,7 @@ RocketMQ自动化配置。Spring与RocketMQ结合，简单封装，使用起来�
 </bean>
 ```
 
-2. 复杂参数可使用`Configuration`配置对象。更多配置详见`Configuration`对象。
+2. 复杂参数可使用`Configuration`对象配置。更多配置详见`Configuration`对象。
 
 ```xml
 <!--消息消费者-->
@@ -46,6 +46,10 @@ RocketMQ自动化配置。Spring与RocketMQ结合，简单封装，使用起来�
 </bean>
 ```
 
+`topics`字段配置`consumer`时，支持订阅多个`topic`和`tag`。`topic`之间用**,**分割，`topic`和`tag`之间用**:**分割，`tag`和`tag`之间用**||**分割。
+
+`topics`字段配置`producer`时，只能配置`topic`，如果配置了多个，会以第一个为准。
+
 ## 消息生产producer
 
 1. 使用构造方法
@@ -58,7 +62,7 @@ RocketMQ自动化配置。Spring与RocketMQ结合，简单封装，使用起来�
 </bean>
 ```
 
-2. 复杂参数可使用`Configuration`配置对象。更多配置详见`Configuration`对象。
+2. 复杂参数可使用`Configuration`对象配置。更多配置详见`Configuration`对象。
 
 ```xml
 <bean id="sender" class="com.github.max.rocketmq.RocketMQSender" init-method="init" destroy-method="shutDown">
