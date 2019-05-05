@@ -48,7 +48,7 @@ RocketMQ自动化配置。Spring与RocketMQ结合，简单封装，使用起来�
 
 `topics`字段配置`consumer`时，支持订阅多个`topic`和`tag`。`topic`之间用 , 分割，`topic`和`tag`之间用 **:** 分割，`tag`和`tag`之间用 || 分割。
 
-`topics`字段配置`producer`时，只能配置`topic`，如果配置了多个，会以第一个为准。
+`topics`字段配置`producer`时，只能配置一个`topic`，如果配置了多个，以第一个为准。
 
 ## 消息生产producer
 
