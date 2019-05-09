@@ -29,11 +29,15 @@ public abstract class AbstractRocketMQ {
         if (StringUtils.isBlank(nameServer) || StringUtils.isBlank(groupName)) {
             throw new IllegalArgumentException(String.format("nameServer=%s,groupName=%s", nameServer, groupName));
         }
-        config.setNameServer(nameServer);
-        config.setGroupName(groupName);
-        config.setTopics(topics);
 
-        config.setMaxMessageSize(1024 * 1024);
+        log.info("====== start init rocketMQ config ======");
+        config.setNameServer(nameServer);
+        log.info("nameServer:" + nameServer);
+        config.setGroupName(groupName);
+        log.info("groupName:" + groupName);
+        config.setTopics(topics);
+        log.info("topics:" + topics);
+
         if (consumeThreadMin > 0) {
             config.setConsumeThreadMin(consumeThreadMin);
             log.info("consumeThreadMin:" + config.getConsumeThreadMin());
