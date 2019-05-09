@@ -32,30 +32,30 @@ public class Configuration {
     private String topics;
 
     /**
-     * 消息模型，支持以下两种1.集群消费2.广播消费
-     * 缺省：MessageModel.CLUSTERING
+     * 消息模型，支持以下两种 1.集群消费 2.广播消费
+     * default：MessageModel.CLUSTERING
      *
      * @see org.apache.rocketmq.common.protocol.heartbeat.MessageModel
      */
     private String messageModel;
     /**
-     * 客户端限制的消息大小，超过报错，同时服务端也会限制（默认128K）
+     * 客户端限制的消息大小，超过报错，同时服务端也会限制（default：128K）
      */
     private int maxMessageSize = 1024 * 1024;
     /**
-     * 消费线程池最小数量
+     * 消费线程池最小数量。default：20
      */
     private int consumeThreadMin = 20;
     /**
-     * 消费线程池最大数量
+     * 消费线程池最大数量。default：64
      */
     private int consumeThreadMax = 64;
     /**
-     * 批量拉消息，一次最多拉多少条。缺省：32
+     * 批量拉消息，一次最多拉多少条。default：32
      */
     private int fetchSize = 10;
     /**
-     * 批量消费，一次消费多少条消息
+     * 批量消费，一次消费多少条消息。即consumer接收参数<p>(List<MessageExt> msgs)</p>的大小。default：1
      */
     private int consumeMessageBatchMaxSize = 1;
     /**
