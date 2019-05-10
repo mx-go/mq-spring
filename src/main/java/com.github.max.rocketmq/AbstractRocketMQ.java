@@ -49,7 +49,7 @@ public abstract class AbstractRocketMQ {
     }
 
     /**
-     * 初始化
+     * 初始化方法
      */
     public void init() {
         load();

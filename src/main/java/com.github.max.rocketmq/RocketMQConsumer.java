@@ -19,7 +19,7 @@ import java.util.UUID;
  * @date: 2019-05-02 16:57
  **/
 @Slf4j
-public class RocketMQProcessor extends AbstractRocketMQ {
+public class RocketMQConsumer extends AbstractRocketMQ {
 
     private volatile DefaultMQPushConsumer consumer;
 
@@ -28,18 +28,18 @@ public class RocketMQProcessor extends AbstractRocketMQ {
      */
     private final MessageListener listener;
 
-    public RocketMQProcessor(Configuration config, MessageListener listener) {
+    public RocketMQConsumer(Configuration config, MessageListener listener) {
         this.config = config;
         this.listener = listener;
     }
 
-    public RocketMQProcessor(String nameServer, String groupName, String topics, MessageListener listener) {
+    public RocketMQConsumer(String nameServer, String groupName, String topics, MessageListener listener) {
         super(nameServer, groupName, topics, 0, 0);
         this.listener = listener;
     }
 
 
-    public RocketMQProcessor(String nameServer, String groupName, String topics, int consumeThreadMin, int consumeThreadMax, MessageListener listener) {
+    public RocketMQConsumer(String nameServer, String groupName, String topics, int consumeThreadMin, int consumeThreadMax, MessageListener listener) {
         super(nameServer, groupName, topics, consumeThreadMin, consumeThreadMax);
         this.listener = listener;
     }
@@ -88,7 +88,7 @@ public class RocketMQProcessor extends AbstractRocketMQ {
         } catch (MQClientException e) {
             log.error("StartRocketMQConsumer Error", e);
         }
-        log.info("RocketMQConsumer Started! group={} instance={}", consumer.getConsumerGroup(), consumer.getInstanceName());
+        log.info("RocketMQConsumer started! group={} instance={}", consumer.getConsumerGroup(), consumer.getInstanceName());
     }
 
     private void setMessageModel(DefaultMQPushConsumer consumer, String messageModel) {

@@ -18,14 +18,14 @@ import java.util.UUID;
  * @date: 2019-05-02 16:57
  **/
 @Slf4j
-public class RocketMQSender extends AbstractRocketMQ {
+public class RocketMQProducer extends AbstractRocketMQ {
 
     private volatile DefaultMQProducer sender;
 
-    public RocketMQSender() {
+    public RocketMQProducer() {
     }
 
-    public RocketMQSender(String nameServer, String groupName, String topics) {
+    public RocketMQProducer(String nameServer, String groupName, String topics) {
         super(nameServer, groupName, topics, 0, 0);
     }
 
@@ -97,6 +97,7 @@ public class RocketMQSender extends AbstractRocketMQ {
             sender.setMaxMessageSize(config.getMaxMessageSize());
             sender.setInstanceName(UUID.randomUUID().toString());
             sender.start();
+            log.info("RocketMQProducer started! nameServer={} group={}", config.getNameServer(), config.getGroupName());
         } catch (MQClientException e) {
             log.error("CanNotCreateProducer nameServer={} group={} ", config.getNameServer(), config.getGroupName(), e);
         }
