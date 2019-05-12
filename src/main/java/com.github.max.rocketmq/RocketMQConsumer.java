@@ -57,9 +57,7 @@ public class RocketMQConsumer extends AbstractRocketMQ {
     }
 
     private void createConsumer() {
-        if (log.isDebugEnabled()) {
-            log.debug("createConsumer start. config: {}, MessageListener: {}", config, listener);
-        }
+        log.info("createConsumer start. config: {}, MessageListener: {}", config, listener);
         consumer = new DefaultMQPushConsumer(config.getGroupName());
         consumer.setNamesrvAddr(config.getNameServer());
         subscribeTopics();
