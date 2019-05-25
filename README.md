@@ -6,7 +6,7 @@ RocketMQ自动化配置。Spring与RocketMQ结合，简单封装，使用起来�
 
 ```xml
 <dependency>
-   <groupId>com.github.max</groupId>
+   <groupId>com.github.mx-go</groupId>
    <artifactId>mq-spring</artifactId>
    <version>1.0.0-SNAPSHOT</version>
 </dependency>
@@ -19,7 +19,7 @@ RocketMQ自动化配置。Spring与RocketMQ结合，简单封装，使用起来�
 ```xml
 <!--消息消费者-->
 <bean id="messageListener" class="com.open.rainbowhorse.mq.MessageListener"/>
-<bean id="consumer" class="com.github.max.rocketmq.RocketMQConsumer" init-method="init" destroy-method="shutDown">
+<bean id="consumer" class="RocketMQConsumer" init-method="init" destroy-method="shutDown">
   <constructor-arg name="nameServer" value="127.0.0.1:9876"/>
   <constructor-arg name="groupName" value="groupName"/>
   <constructor-arg name="topics" value="topicKey:tag1||tag2,topicKey1"/>
@@ -34,12 +34,12 @@ RocketMQ自动化配置。Spring与RocketMQ结合，简单封装，使用起来�
 ```xml
 <!--消息消费者-->
 <bean id="messageListener" class="com.open.rainbowhorse.mq.MessageListener"/>
-<bean id="consumer" class="com.github.max.rocketmq.RocketMQConsumer" init-method="init" destroy-method="shutDown">
+<bean id="consumer" class="RocketMQConsumer" init-method="init" destroy-method="shutDown">
   <constructor-arg name="config" ref="config"/>
   <constructor-arg name="listener" ref="messageListener"/>
 </bean>
 <!-- 可配置更多参数，详见Configuration对象-->
-<bean id="config" class="com.github.max.rocketmq.Configuration">
+<bean id="config" class="Configuration">
   <property name="nameServer" value="127.0.0.1:9876"/>
   <property name="groupName" value="groupName"/>
   <property name="topics" value="topicKey:tag1||tag2,topicKey1"/>
@@ -55,7 +55,7 @@ RocketMQ自动化配置。Spring与RocketMQ结合，简单封装，使用起来�
 1. 使用构造方法
 
 ```xml
-<bean id="sender" class="com.github.max.rocketmq.RocketMQProducer" init-method="init" destroy-method="shutDown">
+<bean id="sender" class="RocketMQProducer" init-method="init" destroy-method="shutDown">
   <constructor-arg name="nameServer" value="127.0.0.1:9876"/>
   <constructor-arg name="groupName" value="groupName"/>
   <constructor-arg name="topics" value="topicKey"/>
@@ -65,11 +65,11 @@ RocketMQ自动化配置。Spring与RocketMQ结合，简单封装，使用起来�
 2. 复杂参数可使用`Configuration`对象配置。更多配置详见`Configuration`对象。
 
 ```xml
-<bean id="sender" class="com.github.max.rocketmq.RocketMQProducer" init-method="init" destroy-method="shutDown">
+<bean id="sender" class="RocketMQProducer" init-method="init" destroy-method="shutDown">
   <property name="config" ref="config"/>
 </bean>
 <!-- 可配置更多参数，详见Configuration对象-->
-<bean id="config" class="com.github.max.rocketmq.Configuration">
+<bean id="config" class="Configuration">
   <property name="nameServer" value="127.0.0.1:9876"/>
   <property name="groupName" value="groupName"/>
   <property name="topics" value="topicKey"/>

@@ -1,4 +1,4 @@
-package com.github.max.rocketmq;
+package com.github.rocketmq;
 
 import lombok.Getter;
 import lombok.Setter;

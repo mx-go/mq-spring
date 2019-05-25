@@ -1,4 +1,4 @@
-package com.github.max.rocketmq;
+package com.github.rocketmq;
 
 import com.google.common.collect.Maps;
 import lombok.Data;

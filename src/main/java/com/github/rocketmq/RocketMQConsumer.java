@@ -1,4 +1,4 @@
-package com.github.max.rocketmq;
+package com.github.rocketmq;
 
 import com.google.common.base.Strings;
 import lombok.extern.slf4j.Slf4j;

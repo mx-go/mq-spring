@@ -1,4 +1,4 @@
-package com.github.max.rocketmq;
+package com.github.rocketmq;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.rocketmq.client.exception.MQClientException;
