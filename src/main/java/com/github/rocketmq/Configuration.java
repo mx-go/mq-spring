@@ -9,9 +9,9 @@ import java.util.Map;
 import java.util.stream.Stream;
 
 /**
- * @description: RocketMQ配置信息
+ * RocketMQ配置信息
+ *
  * @author: max
- * @date: 2019-05-02 16:57
  **/
 @Data
 public class Configuration {

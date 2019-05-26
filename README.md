@@ -8,7 +8,7 @@ RocketMQ自动化配置。Spring与RocketMQ结合，简单封装，使用起来�
 <dependency>
    <groupId>com.github.mx-go</groupId>
    <artifactId>mq-spring</artifactId>
-   <version>1.0.0-SNAPSHOT</version>
+   <version>1.0.0</version>
 </dependency>
 ```
 

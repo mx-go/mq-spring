@@ -13,9 +13,9 @@ import java.util.Map;
 import java.util.UUID;
 
 /**
- * @description: RocketMQ发消息
+ * RocketMQ发消息
+ *
  * @author: max
- * @date: 2019-05-02 16:57
  **/
 @Slf4j
 public class RocketMQProducer extends AbstractRocketMQ {

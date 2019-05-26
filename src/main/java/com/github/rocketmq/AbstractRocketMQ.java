@@ -6,9 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 
 /**
- * @description: RocketMQ
  * @author: max
- * @date: 2019-05-02 16:57
  **/
 @Slf4j
 public abstract class AbstractRocketMQ {
