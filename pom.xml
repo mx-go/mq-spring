@@ -18,7 +18,7 @@
 
     <properties>
         <rocketmq-client.version>4.5.0</rocketmq-client.version>
-        <guava.version>27.0.1-jre</guava.version>
+        <guava.version>29.0-jre</guava.version>
         <slf4j-api.version>1.7.10</slf4j-api.version>
     </properties>
 
